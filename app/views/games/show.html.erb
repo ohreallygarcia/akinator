@@ -1,2 +1,30 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+<div class="row final">
+	<div class=" col-md-12  text-center mx-auto mt-5 mb-5">
+		<h1>AKINATOR</h1>
+	</div>
+
+	<div class="col-md-6 d-flex flex-column align-items-center">
+		<h3>Voici votre résultat :</h3>
+		<ul class="list-group list-reponse">
+			<ul class="list-name mb-5 mt-5">
+  			<% @students.each do |student| %>
+    			<li><%= student["name"] %> with matching of 3/4</li>
+  			<% end %>
+			</ul>
+		 	<% @game["answers"].each do |answer| %>
+		  <li class="list-group-item d-flex justify-content-between align-items-center">
+		  	Ma réponse est :
+		    <span class="answer"><%= answer %></span>
+		  </li>
+		   <% end %>
+		</ul>	
+		<div class="mx-auto text-center mt-2 mb-5">
+			<p class="mx-auto mb-5 mt-4"><%= link_to( "Refaire une partie ?", games_path, method: :post, class: "play-again" ) %></p>
+		</div>
+	</div>
+
+		<div class="col-md-6 d-flex justify-content-center">
+			<img src="https://image.noelshack.com/fichiers/2019/12/4/1553189260-genieaurelie.png" alt="", class="avatar">
+		</div>
+	</div>
+</div>

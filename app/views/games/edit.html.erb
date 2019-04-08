@@ -1,4 +1,19 @@
-<h1>Games#edit</h1>
-<p>Find me in app/views/games/edit.html.erb</p>
+<div class="row d-flex flex-row justify-content-center align-items-center block-question">
+	<div class="col-md-12 d-flex flex-row justify-content-center mt-5 akinator">akinator</div>
+	<div class="col-md-6 d-flex flex-column justify-content-center align-items-center block-left">
+			<h1>Réponds aux question suivantes :</h1>
+			<div class="d-flex flex-column justify-content-center align-items-center square-question">
+			<h3 class="la-question"> <%= @question %> </h3>
 
-<%= link_to( "Question suivante", game_path(1), method: :patch , class: "btn btn-primary" ) %>
+			<!-- <%= link_to( "Oui", game_path(params["id"], answer: "yes", question_id: params["question_id"]), method: :patch , class: "btn btn-light bouton-yes" ) %>
+
+			<%= link_to( "Non", game_path(params["id"], answer: "non", question_id: params["question_id"]), method: :patch , class: "btn btn-light bouton-no" ) %> -->
+			<%= link_to "Oui", game_path(id: @game_id, question_id: @question_id, answer: "yes"), method: :patch, class: "btn btn-light bouton-yes" %>
+			<%= link_to "Non", game_path(id: @game_id, question_id: @question_id, answer: "no"), method: :patch, class: "btn btn-light bouton-no" %>
+
+			</div>
+	</div>
+	<div class="col-md-6 d-flex flex-column justify-content-center align-items-center block-right">
+		<img src="https://image.noelshack.com/fichiers/2019/12/4/1553189260-genieaurelie.png" alt="", class="avatar">
+	</div>
+</div>
